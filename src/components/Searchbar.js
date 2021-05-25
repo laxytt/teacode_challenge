@@ -1,31 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import {TextField} from "@material-ui/core"
 
-const Searchbar = ({ onTermSubmit }) => {
-  const [term, setTerm] = useState("");
-
-  const onInputChange = (event) => {
-    setTerm(event.target.value);
-  };
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    onTermSubmit(term);
+const SearchBar = ({ query, updateQuery }) => {
+  const handleChange = (event) => {
+    updateQuery(event.target.value.trim());
   };
 
   return (
-    <div className="search-bar ui segment">
-      <form onSubmit={onFormSubmit} className="ui form">
-        <div className="field">
-          <input
-            type="text"
-            placeholder="Type to search..."
-            value={term}
-            onChange={onInputChange}
-          />
-        </div>
-      </form>
-    </div>
+    <form  noValidate autoComplete="off">
+      <TextField id="standard-basic" label="Search" value={query} onChange={handleChange} />
+      {/* <input type="text" value={query} onChange={handleChange} /> */}
+    </form>
   );
 };
 
-export default Searchbar;
+export default SearchBar;
