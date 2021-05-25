@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DataList from "../components/DataList";
 import Searchbar from "../components/Searchbar";
 import { getContacts } from "../api/Contacts.js";
-import {Container } from "@material-ui/core"
+import { Container } from "@material-ui/core";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -20,7 +20,6 @@ const App = () => {
     return () => (mounted = false);
   }, []);
 
-  console.log(contacts);
   return (
     <Container fixed>
       <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import {TextField} from "@material-ui/core"
+import { TextField } from "@material-ui/core";
 
 const SearchBar = ({ query, updateQuery }) => {
   const handleChange = (event) => {
@@ -7,9 +7,13 @@ const SearchBar = ({ query, updateQuery }) => {
   };
 
   return (
-    <form  noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Search" value={query} onChange={handleChange} />
-      {/* <input type="text" value={query} onChange={handleChange} /> */}
+    <form noValidate autoComplete="off">
+      <TextField
+        id="standard-basic"
+        label="Search"
+        value={query}
+        onChange={handleChange}
+      />
     </form>
   );
 };
